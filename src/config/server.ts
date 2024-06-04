@@ -1,6 +1,7 @@
 import express from "express";
+import { RouterSever } from "../router/router";
 
-interface ConfigServer{
+interface ConfigServer {
   PORT: number;
 }
 
@@ -17,9 +18,7 @@ export class Server {
   }
 
   private routes(): void {
-    this.app.get("/", (req, res) => {
-      res.send("Hello World");
-    });
+    this.app.use("/api", RouterSever.router);
   }
 
   public start(config: ConfigServer): void {
