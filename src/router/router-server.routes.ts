@@ -1,7 +1,7 @@
 import { Router } from "express";
-import { UserRouter } from "../modules/user/router/user.router";
+import { UserRouter } from "./user.routes";
 
-export class RouterSever {
+export class RouterServer {
   static get router() {
     const router = Router();
     router.use("/user", UserRouter.router);
