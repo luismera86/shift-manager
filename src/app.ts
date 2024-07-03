@@ -1,14 +1,5 @@
-import express from "express";
-import envConfig from "./config/config";
+import { Server } from "./config/server";
 
-const { PORT } = envConfig;
+const server = new Server();
 
-const app = express();
-
-app.get("/", (req, res) => {
-  res.send("Hello World");
-});
-
-app.listen(PORT, () => {
-  console.log(`Server is running on port ${PORT}`);
-});
+server.start({ PORT: 3000 });
